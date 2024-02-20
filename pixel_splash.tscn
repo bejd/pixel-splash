@@ -1,0 +1,323 @@
+[gd_scene load_steps=14 format=3 uid="uid://bso0uurkcbpe7"]
+
+[ext_resource type="Texture2D" uid="uid://c642kbhhpfxba" path="res://sprites/pixel_logo_sheet.png" id="1_600d7"]
+[ext_resource type="Script" path="res://pixel_splash.gd" id="1_mmh88"]
+[ext_resource type="Texture2D" uid="uid://e0n4vmyhxvse" path="res://sprites/pixel_logo_whites.png" id="3_5o7ke"]
+[ext_resource type="Shader" path="res://shaders/polygon_mask.gdshader" id="4_8fqg1"]
+[ext_resource type="FontFile" uid="uid://wydwtbkc8vih" path="res://fonts/m5x7.ttf" id="5_l0ynd"]
+[ext_resource type="FontFile" uid="uid://caasc0cus2oj2" path="res://fonts/Not Jam UI 12.ttf" id="6_qavkm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6gn2x"]
+shader = ExtResource("4_8fqg1")
+shader_parameter/size = 0.0
+shader_parameter/sides = 8
+shader_parameter/rotation = 0.0
+shader_parameter/position_x = 0.5
+shader_parameter/position_y = 0.5
+shader_parameter/border_width = 0.0
+shader_parameter/border_color = Color(0.35, 0.35, 1, 1)
+shader_parameter/maintain_aspect_ratio = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qk5bd"]
+shader = ExtResource("4_8fqg1")
+shader_parameter/size = 0.0
+shader_parameter/sides = 1
+shader_parameter/rotation = 180.0
+shader_parameter/position_x = 4.75e-08
+shader_parameter/position_y = 0.5
+shader_parameter/border_width = 0.0
+shader_parameter/border_color = Color(0.35, 0.35, 1, 1)
+shader_parameter/maintain_aspect_ratio = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_owtl7"]
+shader = ExtResource("4_8fqg1")
+shader_parameter/size = 0.0
+shader_parameter/sides = 1
+shader_parameter/rotation = 180.0
+shader_parameter/position_x = 4.75e-08
+shader_parameter/position_y = 0.5
+shader_parameter/border_width = 0.0
+shader_parameter/border_color = Color(0.35, 0.35, 1, 1)
+shader_parameter/maintain_aspect_ratio = false
+
+[sub_resource type="Animation" id="Animation_im2b2"]
+resource_name = "FadeOut"
+step = 0.06
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeScreen:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.24, 0.48, 0.72),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0.25098), Color(1, 1, 1, 0.501961), Color(1, 1, 1, 0.752941), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1pjwu"]
+resource_name = "Intro"
+length = 4.0
+step = 0.03
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gobot/Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.63, 0.66),
+"transitions": PackedFloat32Array(2, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -88), Vector2(0, 0), Vector2(0, 0), Vector2(2.08165e-12, -4), Vector2(2.08165e-12, 2.08165e-12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gobot/Jaw:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Vector2(0, 72), Vector2(0, 72), Vector2(2.08165e-12, 2.08165e-12)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Gobot/Pupils:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.28, 2.37, 2.46, 2.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Text/TopText:material:shader_parameter/size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.35, 1.65),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.58]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Text/BottomText:material:shader_parameter/size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.35, 1.65),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.37]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Gobot/White:material:shader_parameter/size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.2),
+"transitions": PackedFloat32Array(1, -2, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.55]
+}
+
+[sub_resource type="Animation" id="Animation_pnkxl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Gobot/Head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.08165e-12, -88)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Gobot/Jaw:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 72)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Gobot/Pupils:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Text/TopText:material:shader_parameter/size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Text/BottomText:material:shader_parameter/size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("FadeScreen:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Gobot/White:material:shader_parameter/size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ok4fb"]
+_data = {
+"FadeOut": SubResource("Animation_im2b2"),
+"Intro": SubResource("Animation_1pjwu"),
+"RESET": SubResource("Animation_pnkxl")
+}
+
+[node name="PixelSplash" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 256.0
+offset_bottom = 144.0
+script = ExtResource("1_mmh88")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+color = Color(0, 0, 0, 1)
+
+[node name="Gobot" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 128.0
+offset_top = 72.0
+offset_right = 128.0
+offset_bottom = 72.0
+
+[node name="Head" type="Sprite2D" parent="Gobot"]
+position = Vector2(2.08165e-12, -88)
+texture = ExtResource("1_600d7")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 48, 64, 48)
+
+[node name="Jaw" type="Sprite2D" parent="Gobot"]
+position = Vector2(0, 72)
+texture = ExtResource("1_600d7")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 2.08165e-12, 64, 48)
+
+[node name="White" type="Sprite2D" parent="Gobot"]
+material = SubResource("ShaderMaterial_6gn2x")
+texture = ExtResource("3_5o7ke")
+region_rect = Rect2(2.08165e-12, 96, 64, 48)
+
+[node name="Pupils" type="Sprite2D" parent="Gobot"]
+visible = false
+texture = ExtResource("1_600d7")
+region_enabled = true
+region_rect = Rect2(2.08165e-12, 144, 64, 48)
+
+[node name="Text" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopText" type="Label" parent="Text"]
+material = SubResource("ShaderMaterial_qk5bd")
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 32.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_l0ynd")
+text = "Made with"
+horizontal_alignment = 1
+
+[node name="BottomText" type="Label" parent="Text"]
+material = SubResource("ShaderMaterial_owtl7")
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -44.0
+offset_right = 1.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("6_qavkm")
+theme_override_font_sizes/font_size = 12
+text = "GODOT"
+horizontal_alignment = 1
+
+[node name="FadeScreen" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 256.0
+offset_bottom = 144.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ok4fb")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
