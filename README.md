@@ -2,6 +2,8 @@
 
 A pixellated splash screen for Godot.
 
+![preview](preview.gif)
+
 ## Notes
 
 - Designed for a 256x144 screen size (like a widescreen Game Boy)
