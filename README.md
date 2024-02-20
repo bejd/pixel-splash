@@ -11,14 +11,14 @@ A pixellated splash screen for Godot.
 
 All files are licensed CC0
 
-`fonts/m5x7.ttf`
-by Daniel Linssen
+`fonts/m5x7.ttf`  
+by Daniel Linssen  
 https://managore.itch.io/m5x7
 
-`fonts/Not Jam UI 12.ttf`
-by Not Jam
+`fonts/Not Jam UI 12.ttf`  
+by Not Jam  
 https://not-jam.itch.io/not-jam-ui-12
 
-`shaders/polygon_mask.gdshader`
-by wilkie
+`shaders/polygon_mask.gdshader`  
+by wilkie  
 https://godotshaders.com/shader/polygon-mask/
